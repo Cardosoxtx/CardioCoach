@@ -1,37 +1,142 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <style>
+      .alert-trim {
+        display: inline-block;
+      }
+      .hidden {
+        display: none;
+      }
+      .success {
+        color: #4F8A10;
+        background-color: #DFF2BF;
+      }
+      .error {
+        color: #D8000C;
+        background-color: #FFD2D2;
+      }
+    </style>
+    <style>
+      body {
+        background-image: url('1.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <div class="container">
+    <h1>Cardio Coach</h1>
+    <p>Projeto Escola Secundária do Cartaxo</p>
 
-You can use the [editor on GitHub](https://github.com/Cardosoxtx/CardioCoach/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+    <h4>What is heart rate?</h4>
+      <p>Heart rate is the number of times the heart beats per minute.<p/>
+    <h4>How is your training heart rate calculated ?</h4>
+      <p>
+        Training Heart Rate (FCT) is calculated based on Resting Heart Rate (HRR) and Maximum Heart Rate (MHR).<br/>
+        There are several formulas to determine the FCT and the different training zones.<br/>
+        In this article we will use the most common, the Karvoven Formula.<br/>
+      </p>
+    <br/>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <h3>Karvonen's Formula</h3>
+    <p>The Karvonen Formula is a mathematical formula that helps you determine your target heart rate (HR) training zones through HR Peak and HR at Rest.</p>
+    <p><b>FC = ((FC Máx. - FC in rest) × %Intensity ) + FC in rest</b></p>
+    <img src="imagemmm.png">
 
-### Markdown
+    <br/>
+    <p><b>Karvonen Calculator</b></p>
+    <p>To make it easier to understand and measure the various training zones, you can use this calculator. With the results obtained , you can search for specific training plans for your purposes based on these 5 Zones.</p>
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <b>Age:</b>
+        </div>
+        <div class="col-md-2">
+          <input id="age" type="number" class="info">
+        </div>
+        <div class="col-md-8">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <b>Resting Heart Rate:</b>
+        </div>
+        <div class="col-md-2">
+          <input id="resting-heart-rate" type="number" class="info">
+        </div>
+        <div class="col-md-10">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <b>Intensity (%):</b>
+        </div>
+        <div class="col-md-2">
+          <input id="intensity" type="number" class="info">
+        </div>
+        <div class="col-md-10">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          <button type="button" class="btn btn-secondary" onclick="post()">Submit</button>
+        </div>
+        <div class="col-md-10 alert-trim">
+          <div id="errors-container" class="hidden text-danger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2" viewBox="0 0 16 16" role="img" aria-label="Warning:">
+              <path d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+            <label id="errors"></label>
+          </div>
+          <div id="result-container" class="hidden text-success">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+            </svg>
+            <label id="result"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-```markdown
-Syntax highlighted code block
+  <br/>
+  <br/>
+  <footer class="pt-2 border-top">
+    <p class="text-center">© 2022</p>
+  </footer>
 
-# Header 1
-## Header 2
-### Header 3
+  <script>
+    function post() {
+      let age = parseInt(document.getElementById("age").value)
+      let restingHeartRate = parseInt(document.getElementById("resting-heart-rate").value)
+      let intensity = parseInt(document.getElementById("intensity").value)
 
-- Bulleted
-- List
+      if (isNaN(age) || isNaN(restingHeartRate) || isNaN(intensity)) {
+        document.getElementById("errors-container").style.display = "block"
+        document.getElementById("result-container").style.display = "none"
+        document.getElementById("errors").innerHTML = "The input values must be numeric and not empty"
+        return;
+      }
 
-1. Numbered
-2. List
+      if (intensity <= 0 || intensity >= 100) {
+        document.getElementById("errors-container").style.display = "block"
+        document.getElementById("result-container").style.display = "none"
+        document.getElementById("errors").innerHTML = "Intensity has to be higher than 0 and lower than 100 percent"
+      }
 
-**Bold** and _Italic_ and `Code` text
+      let maxHeartRate = 220 - age
+      let result = (maxHeartRate - restingHeartRate) * (intensity / 100) + restingHeartRate
+      document.getElementById("errors-container").style.display = "none"
+      document.getElementById("result-container").style.display = "block"
+      document.getElementById("result").innerHTML = `${result} bpm`
+    }
+  </script>
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Cardosoxtx/CardioCoach/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</b></td></tr></tbody></table></body></html>
